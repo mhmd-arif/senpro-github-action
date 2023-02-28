@@ -35,13 +35,13 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
-          port: ${{ secrets.PORT }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
           script: |
             eval "$(ssh-agent -s)"
-            ssh-add ~/.ssh/senpro-ssh-1
-            cd ~/senpro/456370/modul01/senpro-github-action
+            ssh-add ~/.ssh/senpro-ssh-rev-13
+            cd ~/senpro/463609/modul01/senpro-github-action
             git restore .
             git pull origin main
             npm install
